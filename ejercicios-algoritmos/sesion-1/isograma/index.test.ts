@@ -24,4 +24,10 @@ describe("esIsograma", () => {
 	});
      })
   });
+
+  describe("cuando la palabra está vacía", () => {
+     it("también se considera un isograma", () => {
+	expect(esIsograma("")).toBe(true);
+     });
+  });
 });
