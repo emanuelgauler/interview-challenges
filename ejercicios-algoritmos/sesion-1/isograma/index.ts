@@ -1,8 +1,8 @@
 export default function esIsograma(string: string): boolean {
    const count = string.split("")
-   .map( e => e.toLowerCase() )
    .reduce((a, e) => {
-      a[e] = a[e] + 1 || 1;
+      const letter = e.toLowerCase()
+      a[letter] = a[letter] + 1 || 1;
       return a;
    }, {});
 
