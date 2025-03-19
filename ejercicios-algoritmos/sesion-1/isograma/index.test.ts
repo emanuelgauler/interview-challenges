@@ -11,9 +11,17 @@ describe("esIsograma", () => {
     expect(esIsograma("Murciélago")).toBe(true);
   });
 
-  it("debería ignorar mayúsculas", () => {
-    expect(esIsograma("Casa")).toBe(false);
-    expect(esIsograma("PeRrO")).toBe(false);
-    expect(esIsograma("GaTo")).toBe(true);
+  [{
+     word: "Casa", expected: false
+  }, {
+     word: "PeRrO", expected: false
+  }, {
+     word: "GaTo", expected: true
+  }].forEach(({ word, expected }) => {
+     describe(`con ${word}`, () => {
+	it("debería ignorar mayúsculas", () => {
+	   expect(esIsograma(word)).toBe(expected);
+	});
+     })
   });
 });
